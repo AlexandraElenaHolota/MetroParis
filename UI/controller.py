@@ -9,6 +9,14 @@ class Controller:
         self._model = model
 
     def handleCreaGrafo(self,e):
+        self._model.buildGraph()
+        nNodes = self._model.getNumNodes()
+        nEdges = self._model.getNumEdges()
+        self._view.lst_result.controls.clear()
+        self._view.lst_result.controls.append(ft.Text("Grafo correttamente creato."))
+        self._view.lst_result.controls.append(ft.Text(F"Il grafo ha {nNodes} nodi" ))
+        self._view.lst_result.controls.append(ft.Text(F"Il grafo ha {nEdges} archi"))
+        self._view.update_page()
         pass
 
     def handleCercaRaggiungibili(self,e):
