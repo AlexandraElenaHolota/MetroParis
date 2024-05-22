@@ -34,7 +34,7 @@ class Model:
         allConnessioni = DAO.getAllConnessioni()
         for c in allConnessioni:
             if self._grafo.has_edge(self._idMap[c.id_stazP], self._idMap[c.id_stazA]):
-                self._grafo[self._idMap[c.id_stazP]][self._idMap[c.id_stazA]]['weight'] +=Es 1
+                self._grafo[self._idMap[c.id_stazP]][self._idMap[c.id_stazA]]['weight'] += 1
             else:
                 self._grafo.add_edge(self._idMap[c.id_stazP], self._idMap[c.id_stazA], weight=1)
 
